@@ -11,7 +11,14 @@ public:
 		std::cout << "freeing pixel memory.\n";
 		delete[] pixels;
 	}
+
+	bool isValid()
+	{
+		// max 1024 x 1024 image is valid	
+		return (m_columns <= 1024 && m_rows <= 1024);
+	}
+
 	const uint16_t m_rows;
 	const uint16_t m_columns;
-	uint8_t* pixels; // max 1k x 1k image
+	uint8_t* pixels; 
 };
